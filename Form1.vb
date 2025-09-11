@@ -13,4 +13,8 @@
         Me.Tabla_ProductosTableAdapter.Fill(Me.BaseDatosNegocioDataSet.tabla_Productos)
 
     End Sub
+
+    Private Sub TextBox2_TextChanged(sender As Object, e As EventArgs) Handles TextBox2.TextChanged
+
+    End Sub
 End Class

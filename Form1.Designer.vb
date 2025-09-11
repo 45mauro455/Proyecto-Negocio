@@ -32,6 +32,8 @@ Partial Class Form1
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Me.Tabla_ProductosBindingNavigator = New System.Windows.Forms.BindingNavigator(Me.components)
         Me.BindingNavigatorAddNewItem = New System.Windows.Forms.ToolStripButton()
+        Me.Tabla_ProductosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.BaseDatosNegocioDataSet = New proyecto_negocio.BaseDatosNegocioDataSet()
         Me.BindingNavigatorCountItem = New System.Windows.Forms.ToolStripLabel()
         Me.BindingNavigatorDeleteItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorMoveFirstItem = New System.Windows.Forms.ToolStripButton()
@@ -53,8 +55,6 @@ Partial Class Form1
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Tabla_ProductosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.BaseDatosNegocioDataSet = New proyecto_negocio.BaseDatosNegocioDataSet()
         Me.Tabla_ProductosTableAdapter = New proyecto_negocio.BaseDatosNegocioDataSetTableAdapters.tabla_ProductosTableAdapter()
         Me.TableAdapterManager = New proyecto_negocio.BaseDatosNegocioDataSetTableAdapters.TableAdapterManager()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
@@ -72,6 +72,7 @@ Partial Class Form1
         Me.DataGridViewTextBoxColumn9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn11 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.TextBox2 = New System.Windows.Forms.TextBox()
         Id_productoLabel = New System.Windows.Forms.Label()
         NombreLabel = New System.Windows.Forms.Label()
         DescripcionLabel = New System.Windows.Forms.Label()
@@ -80,9 +81,9 @@ Partial Class Form1
         CategoriaLabel = New System.Windows.Forms.Label()
         CType(Me.Tabla_ProductosBindingNavigator, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Tabla_ProductosBindingNavigator.SuspendLayout()
-        CType(Me.Tabla_ProductosDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Tabla_ProductosBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BaseDatosNegocioDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Tabla_ProductosDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.OasisdbDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ProductosBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ProductosDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -169,6 +170,16 @@ Partial Class Form1
         Me.BindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = True
         Me.BindingNavigatorAddNewItem.Size = New System.Drawing.Size(23, 22)
         Me.BindingNavigatorAddNewItem.Text = "Agregar nuevo"
+        '
+        'Tabla_ProductosBindingSource
+        '
+        Me.Tabla_ProductosBindingSource.DataMember = "tabla Productos"
+        Me.Tabla_ProductosBindingSource.DataSource = Me.BaseDatosNegocioDataSet
+        '
+        'BaseDatosNegocioDataSet
+        '
+        Me.BaseDatosNegocioDataSet.DataSetName = "BaseDatosNegocioDataSet"
+        Me.BaseDatosNegocioDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'BindingNavigatorCountItem
         '
@@ -342,16 +353,6 @@ Partial Class Form1
         Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
         Me.DataGridViewTextBoxColumn6.ReadOnly = True
         '
-        'Tabla_ProductosBindingSource
-        '
-        Me.Tabla_ProductosBindingSource.DataMember = "tabla Productos"
-        Me.Tabla_ProductosBindingSource.DataSource = Me.BaseDatosNegocioDataSet
-        '
-        'BaseDatosNegocioDataSet
-        '
-        Me.BaseDatosNegocioDataSet.DataSetName = "BaseDatosNegocioDataSet"
-        Me.BaseDatosNegocioDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
         'Tabla_ProductosTableAdapter
         '
         Me.Tabla_ProductosTableAdapter.ClearBeforeFill = True
@@ -465,11 +466,19 @@ Partial Class Form1
         Me.DataGridViewTextBoxColumn11.HeaderText = "codigoBarra"
         Me.DataGridViewTextBoxColumn11.Name = "DataGridViewTextBoxColumn11"
         '
+        'TextBox2
+        '
+        Me.TextBox2.Location = New System.Drawing.Point(278, 23)
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox2.TabIndex = 17
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(888, 493)
+        Me.Controls.Add(Me.TextBox2)
         Me.Controls.Add(Me.ProductosDataGridView)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.TextBox1)
@@ -492,9 +501,9 @@ Partial Class Form1
         CType(Me.Tabla_ProductosBindingNavigator, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Tabla_ProductosBindingNavigator.ResumeLayout(False)
         Me.Tabla_ProductosBindingNavigator.PerformLayout()
-        CType(Me.Tabla_ProductosDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Tabla_ProductosBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BaseDatosNegocioDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Tabla_ProductosDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.OasisdbDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ProductosBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ProductosDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
@@ -545,4 +554,5 @@ Partial Class Form1
     Friend WithEvents DataGridViewTextBoxColumn9 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn10 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn11 As DataGridViewTextBoxColumn
+    Friend WithEvents TextBox2 As TextBox
 End Class
