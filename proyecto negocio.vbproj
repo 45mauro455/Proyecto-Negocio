@@ -110,6 +110,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>oasisdbDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="prueba.Designer.vb">
+      <DependentUpon>prueba.vb</DependentUpon>
+    </Compile>
+    <Compile Include="prueba.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Form1.resx">
